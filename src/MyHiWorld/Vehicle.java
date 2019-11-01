@@ -1,0 +1,6 @@
+package MyHiWorld;
+
+class Vehicle {}
+
+
+
