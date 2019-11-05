@@ -1,5 +1,3 @@
-package Socket;
-
 import java.net.*;
 import java.io.*;
 
@@ -19,13 +17,13 @@ public class GreetingServer extends Thread
         {
             try
             {
-                System.out.println("ç­‰å¾…è¿œç¨‹è¿æ¥ï¼Œç«¯å£å·ä¸ºï¼š" + serverSocket.getLocalPort() + "...");
+                System.out.println("µÈ´ıÔ¶³ÌÁ¬½Ó£¬¶Ë¿ÚºÅÎª£º" + serverSocket.getLocalPort() + "...");
                 Socket server = serverSocket.accept();
-                System.out.println("è¿œç¨‹ä¸»æœºåœ°å€ï¼š" + server.getRemoteSocketAddress());
+                System.out.println("Ô¶³ÌÖ÷»úµØÖ·£º" + server.getRemoteSocketAddress());
                 DataInputStream in = new DataInputStream(server.getInputStream());
                 System.out.println(in.readUTF());
                 DataOutputStream out = new DataOutputStream(server.getOutputStream());
-                out.writeUTF("è°¢è°¢è¿æ¥æˆ‘ï¼š" + server.getLocalSocketAddress() + "\nGoodbye!");
+                out.writeUTF("Ğ»Ğ»Á¬½ÓÎÒ£º" + server.getLocalSocketAddress() + "\nGoodbye!");
                 server.close();
             }catch(SocketTimeoutException s)
             {

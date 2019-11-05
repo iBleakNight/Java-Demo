@@ -1,5 +1,3 @@
-package Socket;
-
 import java.net.*;
 import java.io.*;
 
@@ -11,16 +9,16 @@ public class GreetingClient
         int port = Integer.parseInt(args[1]);
         try
         {
-            System.out.println("è¿æ¥åˆ°ä¸»æœºï¼š" + serverName + " ï¼Œç«¯å£å·ï¼š" + port);
+            System.out.println("Á¬½Óµ½Ö÷»ú£º" + serverName + " £¬¶Ë¿ÚºÅ£º" + port);
             Socket client = new Socket(serverName, port);
-            System.out.println("è¿œç¨‹ä¸»æœºåœ°å€ï¼š" + client.getRemoteSocketAddress());
+            System.out.println("Ô¶³ÌÖ÷»úµØÖ·£º" + client.getRemoteSocketAddress());
             OutputStream outToServer = client.getOutputStream();
             DataOutputStream out = new DataOutputStream(outToServer);
 
             out.writeUTF("Hello from " + client.getLocalSocketAddress());
             InputStream inFromServer = client.getInputStream();
             DataInputStream in = new DataInputStream(inFromServer);
-            System.out.println("æœåŠ¡å™¨å“åº”ï¼š " + in.readUTF());
+            System.out.println("·şÎñÆ÷ÏìÓ¦£º " + in.readUTF());
             client.close();
         }catch(IOException e)
         {
